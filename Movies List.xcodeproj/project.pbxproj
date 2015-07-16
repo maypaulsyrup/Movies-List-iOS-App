@@ -168,6 +168,7 @@
 		DA2F24151B5819EE00553EA4 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = PCP;
 				LastUpgradeCheck = 0640;
 				ORGANIZATIONNAME = "Paul Carlo Peralta";
 				TargetAttributes = {
@@ -428,6 +429,7 @@
 				DA2F24451B5819EE00553EA4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		DA2F24461B5819EE00553EA4 /* Build configuration list for PBXNativeTarget "Movies ListTests" */ = {
 			isa = XCConfigurationList;
@@ -436,6 +438,7 @@
 				DA2F24481B5819EE00553EA4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
