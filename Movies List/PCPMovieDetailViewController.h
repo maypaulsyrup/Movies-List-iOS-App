@@ -8,7 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
+#import "PCPMovie.h"
+
 @interface PCPMovieDetailViewController : UIViewController
+
+@property (strong, nonatomic) PCPMovie *movie;
 
 @property (strong, nonatomic) IBOutlet UIScrollView *scrollView;
 @property (strong, nonatomic) IBOutlet UIImageView *bacdropView;

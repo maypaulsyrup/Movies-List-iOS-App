@@ -56,19 +56,19 @@
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="0.0" translatesAutoresizingMaskIntoConstraints="NO" id="wAu-My-FWf">
-                                        <rect key="frame" x="140" y="322" width="445" height="21"/>
+                                        <rect key="frame" x="133" y="322" width="452" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Year" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MfP-Nr-IY2">
-                                        <rect key="frame" x="140" y="343" width="223" height="18"/>
+                                        <rect key="frame" x="133" y="343" width="226" height="18"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rating" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g4c-YO-vQG">
-                                        <rect key="frame" x="363" y="343" width="222" height="18"/>
+                                        <rect key="frame" x="359" y="343" width="226" height="18"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
@@ -77,7 +77,7 @@
                                 <constraints>
                                     <constraint firstItem="brr-IP-HAq" firstAttribute="top" secondItem="pkN-Kh-SgW" secondAttribute="bottom" constant="10" id="0nc-Sr-Jxp"/>
                                     <constraint firstItem="pkN-Kh-SgW" firstAttribute="top" secondItem="0mi-9Z-zzg" secondAttribute="top" id="7P7-dp-PlW"/>
-                                    <constraint firstItem="MfP-Nr-IY2" firstAttribute="leading" secondItem="x5g-5r-XJL" secondAttribute="trailing" constant="15" id="90E-9y-A4F"/>
+                                    <constraint firstItem="MfP-Nr-IY2" firstAttribute="leading" secondItem="x5g-5r-XJL" secondAttribute="trailing" constant="8" id="90E-9y-A4F"/>
                                     <constraint firstItem="brr-IP-HAq" firstAttribute="leading" secondItem="0mi-9Z-zzg" secondAttribute="leading" constant="15" id="FNo-dY-Jb2"/>
                                     <constraint firstItem="g4c-YO-vQG" firstAttribute="leading" secondItem="MfP-Nr-IY2" secondAttribute="trailing" id="MgT-dg-Q5V"/>
                                     <constraint firstItem="g4c-YO-vQG" firstAttribute="width" secondItem="MfP-Nr-IY2" secondAttribute="width" id="OKV-wS-Ucs"/>
@@ -90,7 +90,7 @@
                                     <constraint firstAttribute="trailing" secondItem="brr-IP-HAq" secondAttribute="trailing" constant="15" id="ajA-3I-PHR"/>
                                     <constraint firstAttribute="trailing" secondItem="g4c-YO-vQG" secondAttribute="trailing" constant="15" id="fgk-dJ-9mp"/>
                                     <constraint firstItem="pkN-Kh-SgW" firstAttribute="leading" secondItem="x5g-5r-XJL" secondAttribute="leading" constant="-15" id="h9G-fT-xQZ"/>
-                                    <constraint firstItem="wAu-My-FWf" firstAttribute="leading" secondItem="x5g-5r-XJL" secondAttribute="trailing" constant="15" id="mzm-NT-RtJ"/>
+                                    <constraint firstItem="wAu-My-FWf" firstAttribute="leading" secondItem="x5g-5r-XJL" secondAttribute="trailing" constant="8" id="mzm-NT-RtJ"/>
                                     <constraint firstItem="g4c-YO-vQG" firstAttribute="top" secondItem="wAu-My-FWf" secondAttribute="bottom" id="vZk-06-lTB"/>
                                     <constraint firstItem="pkN-Kh-SgW" firstAttribute="leading" secondItem="0mi-9Z-zzg" secondAttribute="leading" id="xFj-Op-w2n"/>
                                 </constraints>
@@ -213,7 +213,7 @@
                             <outlet property="delegate" destination="7bK-jq-Zjz" id="RA6-mI-bju"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Master" id="Zdf-7t-Un8"/>
+                    <navigationItem key="navigationItem" title="Movies" id="Zdf-7t-Un8"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rux-fX-hf1" sceneMemberID="firstResponder"/>
             </objects>
