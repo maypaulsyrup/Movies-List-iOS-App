@@ -36,6 +36,8 @@
                 [self.movies addObject:movie];
             }
             
+            [self.refreshControl endRefreshing];
+            
             [self.tableView reloadData];
         }
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
@@ -59,27 +61,9 @@
     self.movies = [NSMutableArray array];
     
     [self fetchMoviesFromServer];
-    /*PCPMovie *movie1 = [[PCPMovie alloc] initWithTitle:@"The Shawshank Redemption" yearReleased:1994 andSlug:@"the-shawshank-redemption-1994"];
-    movie1.rating = 9.2f;
-    movie1.overview = @"Framed in the 1940s for the double murder of his wife and her lover, upstanding banker Andy Dufresne begins a new life at the Shawshank prison, where he puts his accounting skills to work for an amoral warden. During his long stretch in prison, Dufresne comes to be admired by the other inmates -- including an older prisoner named Red -- for his integrity and unquenchable sense of hope.";
     
-    PCPMovie *movie2 = [[PCPMovie alloc] initWithTitle:@"The Godfather" yearReleased:1972 andSlug:@"the-godfather-1972"];
-    movie2.rating = 9.1f;
-    movie2.overview = @"The story spans the years from 1945 to 1955 and chronicles the fictional Italian-American Corleone crime family. When organized crime family patriarch Vito Corleone barely survives an attempt on his life, his youngest son, Michael, steps in to take care of the would-be killers, launching a campaign of bloody revenge.";
-    
-    PCPMovie *movie3 = [[PCPMovie alloc] initWithTitle:@"The Godfather: Part II" yearReleased:1974 andSlug:@"the-godfather-part-ii-1974"];
-    movie3.rating = 9.0f;
-    movie3.overview = @"The continuing saga of the Corleone crime family tells the story of a young Vito Corleone growing up in Sicily and in 1910s New York; and follows Michael Corleone in the 1950s as he attempts to expand the family business into Las Vegas, Hollywood and Cuba";
-    
-    PCPMovie *movie4 = [[PCPMovie alloc] initWithTitle:@"The Dark Knight" yearReleased:2008 andSlug:@"the-dark-knight-2008"];
-    movie4.rating = 8.9f;
-    movie4.overview = @"Batman raises the stakes in his war on crime. With the help of Lt. Jim Gordon and District Attorney Harvey Dent, Batman sets out to dismantle the remaining criminal organizations that plague the streets. The partnership proves to be effective, but they soon find themselves prey to a reign of chaos unleashed by a rising criminal mastermind known to the terrified citizens of Gotham as the Joker.";
-    
-    PCPMovie *movie5 = [[PCPMovie alloc] initWithTitle:@"Fight Club" yearReleased:1999 andSlug:@"fight-club-1999"];
-    movie5.rating = 8.9f;
-    movie5.overview = @"A ticking-time-bomb insomniac and a slippery soap salesman channel primal male aggression into a shocking new form of therapy. Their concept catches on, with underground \"fight clubs\" forming in every town, until an eccentric gets in the way and ignites an out-of-control spiral toward oblivion.";
-    
-    self.movies = @[movie1, movie2, movie3, movie4, movie5];*/
+    self.refreshControl = [[UIRefreshControl alloc] init];
+    [self.refreshControl addTarget:self action:@selector(fetchMoviesFromServer) forControlEvents:UIControlEventValueChanged];
 }
 
 - (void)didReceiveMemoryWarning {
