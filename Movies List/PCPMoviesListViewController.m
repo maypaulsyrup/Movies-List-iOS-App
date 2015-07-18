@@ -8,17 +8,42 @@
 
 #import "PCPMoviesListViewController.h"
 
+#import "PCPConstants.h"
+#import <AFNetworking/AFNetworking.h>
+#import <SDWebImage/UIImageView+WebCache.h>
 #import "PCPMovie.h"
 #import "PCPMovieCell.h"
 #import "PCPMovieDetailViewController.h"
 
 @interface PCPMoviesListViewController () <UISplitViewControllerDelegate>
 
-@property (copy, nonatomic) NSArray *movies;
+@property (strong, nonatomic) NSMutableArray *movies;
 
 @end
 
 @implementation PCPMoviesListViewController
+
+- (void)fetchMoviesFromServer {
+    AFHTTPRequestOperationManager *requestManager = [AFHTTPRequestOperationManager manager];
+    requestManager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"text/plain"];
+    [requestManager GET:[NSString stringWithFormat:PCPMoviesListURL, 1] parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        if ([responseObject[@"status"] isEqualToString:@"ok"]) {
+            for (NSDictionary *movieDictionary in responseObject[@"data"][@"movies"]) {
+                PCPMovie *movie = [[PCPMovie alloc] initWithTitle:movieDictionary[@"title"] yearReleased:[movieDictionary[@"year"] intValue] andSlug:movieDictionary[@"slug"]];
+                movie.rating = [movieDictionary[@"rating"] floatValue];
+                movie.overview = movieDictionary[@"overview"];
+                
+                [self.movies addObject:movie];
+            }
+            
+            [self.tableView reloadData];
+        }
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        NSLog(@"%@", error);
+    }];
+}
+
+#pragma mark - View
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -31,7 +56,10 @@
     
     self.splitViewController.delegate = self;
     
-    PCPMovie *movie1 = [[PCPMovie alloc] initWithTitle:@"The Shawshank Redemption" yearReleased:1994 andSlug:@"the-shawshank-redemption-1994"];
+    self.movies = [NSMutableArray array];
+    
+    [self fetchMoviesFromServer];
+    /*PCPMovie *movie1 = [[PCPMovie alloc] initWithTitle:@"The Shawshank Redemption" yearReleased:1994 andSlug:@"the-shawshank-redemption-1994"];
     movie1.rating = 9.2f;
     movie1.overview = @"Framed in the 1940s for the double murder of his wife and her lover, upstanding banker Andy Dufresne begins a new life at the Shawshank prison, where he puts his accounting skills to work for an amoral warden. During his long stretch in prison, Dufresne comes to be admired by the other inmates -- including an older prisoner named Red -- for his integrity and unquenchable sense of hope.";
     
@@ -51,7 +79,7 @@
     movie5.rating = 8.9f;
     movie5.overview = @"A ticking-time-bomb insomniac and a slippery soap salesman channel primal male aggression into a shocking new form of therapy. Their concept catches on, with underground \"fight clubs\" forming in every town, until an eccentric gets in the way and ignites an out-of-control spiral toward oblivion.";
     
-    self.movies = @[movie1, movie2, movie3, movie4, movie5];
+    self.movies = @[movie1, movie2, movie3, movie4, movie5];*/
 }
 
 - (void)didReceiveMemoryWarning {
@@ -68,7 +96,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     // Return the number of rows in the section.
-    return 5;
+    return [self.movies count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -77,7 +105,8 @@
     PCPMovieCell *cell = [tableView dequeueReusableCellWithIdentifier:@"MovieCell" forIndexPath:indexPath];
     
     // Configure the cell...
-    cell.backdropView.image = [UIImage imageNamed:[NSString stringWithFormat:@"%@-backdrop.jpg", movie.slug]];
+    [cell.backdropView sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:PCPMovieBackdropURL, movie.slug]] placeholderImage:[UIImage imageNamed:@"backdrop-placeholder"]];
+    
     cell.titleLabel.text = movie.title;
     cell.yearLabel.text = [NSString stringWithFormat:@"%d", movie.yearReleased];
     
