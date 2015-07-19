@@ -56,9 +56,9 @@
         NSLog(@"Error -- %@", errorInfo[@"NSLocalizedDescription"]);
         NSLog(@"Error Code: %d", [error code]);
         
-        if (error.code == -1009) {
+        if ([error code] == -1009 || [error code] == -1003) {
             [[[UIAlertView alloc] initWithTitle:@"Error" message:errorInfo[@"NSLocalizedDescription"] delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil] show];
-        } else if (error.code == -1011) {
+        } else if ([error code] == -1011) {
             self.hasReachedLastPage = YES;
         }
         
