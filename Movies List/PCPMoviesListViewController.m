@@ -18,15 +18,24 @@
 @interface PCPMoviesListViewController () <UISplitViewControllerDelegate>
 
 @property (strong, nonatomic) NSMutableArray *movies;
+@property (assign, getter=isLoading) BOOL loading;
+@property (assign, nonatomic) int pageNumber;
+@property (assign, nonatomic) BOOL hasReachedLastPage;
 
 @end
 
 @implementation PCPMoviesListViewController
 
 - (void)fetchMoviesFromServer {
+    self.loading = YES;
+    
     AFHTTPRequestOperationManager *requestManager = [AFHTTPRequestOperationManager manager];
     requestManager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"text/plain"];
-    [requestManager GET:[NSString stringWithFormat:PCPMoviesListURL, 1] parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+    [requestManager GET:[NSString stringWithFormat:PCPMoviesListURL, self.pageNumber] parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        if (self.pageNumber == 1) {
+            [self.movies removeAllObjects];
+        }
+        
         if ([responseObject[@"status"] isEqualToString:@"ok"]) {
             for (NSDictionary *movieDictionary in responseObject[@"data"][@"movies"]) {
                 PCPMovie *movie = [[PCPMovie alloc] initWithTitle:movieDictionary[@"title"] yearReleased:[movieDictionary[@"year"] intValue] andSlug:movieDictionary[@"slug"]];
@@ -37,12 +46,40 @@
             }
             
             [self.refreshControl endRefreshing];
+            self.loading = NO;
             
             [self.tableView reloadData];
         }
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        NSLog(@"%@", error);
+        NSDictionary *errorInfo = error.userInfo;
+        NSLog(@"%@", errorInfo[@"NSLocalizedDescription"]);
+        NSLog(@"%d", error.code);
+        
+        if (error.code == -1009) {
+            [[[UIAlertView alloc] initWithTitle:@"Error" message:errorInfo[@"NSLocalizedDescription"] delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil] show];
+        } else if (error.code == -1011) {
+            self.hasReachedLastPage = YES;
+            [self.tableView reloadData];
+        }
     }];
+}
+
+- (void)reloadMovies {
+    if (self.isLoading) {
+        return;
+    }
+    
+    self.pageNumber = 1;
+    [self fetchMoviesFromServer];
+}
+
+- (void)loadMoreMovies {
+    if (self.isLoading) {
+        return;
+    }
+    
+    self.pageNumber++;
+    [self fetchMoviesFromServer];
 }
 
 #pragma mark - View
@@ -60,10 +97,11 @@
     
     self.movies = [NSMutableArray array];
     
+    self.pageNumber = 1;
     [self fetchMoviesFromServer];
     
     self.refreshControl = [[UIRefreshControl alloc] init];
-    [self.refreshControl addTarget:self action:@selector(fetchMoviesFromServer) forControlEvents:UIControlEventValueChanged];
+    [self.refreshControl addTarget:self action:@selector(reloadMovies) forControlEvents:UIControlEventValueChanged];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -80,27 +118,61 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     // Return the number of rows in the section.
-    return [self.movies count];
+    if (self.isLoading || self.hasReachedLastPage) {
+        return [self.movies count];
+    } else {
+        return [self.movies count] + 1;
+    }
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    PCPMovie *movie = self.movies[indexPath.row];
-    
-    PCPMovieCell *cell = [tableView dequeueReusableCellWithIdentifier:@"MovieCell" forIndexPath:indexPath];
-    
-    // Configure the cell...
-    [cell.backdropView sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:PCPMovieBackdropURL, movie.slug]] placeholderImage:[UIImage imageNamed:@"backdrop-placeholder"]];
-    
-    cell.titleLabel.text = movie.title;
-    cell.yearLabel.text = [NSString stringWithFormat:@"%d", movie.yearReleased];
-    
-    return cell;
+    if (indexPath.row == [self.movies count]) {
+        UITableViewCell *loadMoreCell = [tableView dequeueReusableCellWithIdentifier:@"LoadMoreCell" forIndexPath:indexPath];
+        
+        // Configure the cell...
+        loadMoreCell.textLabel.hidden = NO;
+        
+        return loadMoreCell;
+    } else {
+        PCPMovie *movie = self.movies[indexPath.row];
+        
+        PCPMovieCell *movieCell = [tableView dequeueReusableCellWithIdentifier:@"MovieCell" forIndexPath:indexPath];
+        
+        // Configure the cell...
+        [movieCell.backdropView sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:PCPMovieBackdropURL, movie.slug]] placeholderImage:[UIImage imageNamed:@"backdrop-placeholder"]];
+        
+        movieCell.titleLabel.text = movie.title;
+        movieCell.yearLabel.text = [NSString stringWithFormat:@"%d", movie.yearReleased];
+        
+        return movieCell;
+    }
 }
 
 #pragma mark - Table view delegate
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return 196.0f;
+    if (indexPath.row == [self.movies count]) {
+        return 44.0f;
+    } else {
+        return 196.0f;
+    }
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (indexPath.row == [self.movies count]) {
+        [tableView deselectRowAtIndexPath:indexPath animated:YES];
+        
+        UITableViewCell *loadMoreCell = [tableView cellForRowAtIndexPath:indexPath];
+        
+        loadMoreCell.textLabel.hidden = YES;
+        
+        UIActivityIndicatorView *loadingView = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
+        loadingView.center = loadMoreCell.contentView.center;
+        [loadMoreCell addSubview:loadingView];
+        [loadingView startAnimating];
+        
+        [self loadMoreMovies];
+    }
 }
 
 /*
