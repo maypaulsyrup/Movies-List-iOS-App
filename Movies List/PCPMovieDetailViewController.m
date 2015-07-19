@@ -58,7 +58,7 @@
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     
-    if (UIDeviceOrientationIsLandscape([[UIDevice currentDevice] orientation])) {
+    if ([[UIApplication sharedApplication] statusBarOrientation] == UIInterfaceOrientationLandscapeLeft || [[UIApplication sharedApplication] statusBarOrientation] == UIInterfaceOrientationLandscapeRight) {
         self.titleLabel.font = [UIFont boldSystemFontOfSize:25.0f];
         self.yearLabel.font = [UIFont systemFontOfSize:20.0f];
         self.ratingLabel.font = [UIFont systemFontOfSize:20.0f];
@@ -78,11 +78,11 @@
 #pragma mark - Orientation change notification
 
 - (void)orientationChanged:(NSNotification *)notification {
-    UIDeviceOrientation orientation = [[UIDevice currentDevice] orientation];
+    UIInterfaceOrientation orientation = [[UIApplication sharedApplication] statusBarOrientation];
     
     switch (orientation) {
-        case UIDeviceOrientationPortrait:
-        case UIDeviceOrientationPortraitUpsideDown: {
+        case UIInterfaceOrientationPortrait:
+        case UIInterfaceOrientationPortraitUpsideDown: {
             self.titleLabel.font = [UIFont boldSystemFontOfSize:17.0f];
             self.yearLabel.font = [UIFont systemFontOfSize:15.0f];
             self.ratingLabel.font = [UIFont systemFontOfSize:15.0f];
@@ -91,8 +91,8 @@
             break;
         }
             
-        case UIDeviceOrientationLandscapeLeft:
-        case UIDeviceOrientationLandscapeRight: {
+        case UIInterfaceOrientationLandscapeLeft:
+        case UIInterfaceOrientationLandscapeRight: {
             self.titleLabel.font = [UIFont boldSystemFontOfSize:25.0f];
             self.yearLabel.font = [UIFont systemFontOfSize:20.0f];
             self.ratingLabel.font = [UIFont systemFontOfSize:20.0f];

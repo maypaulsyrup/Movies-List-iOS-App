@@ -4,6 +4,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
         <!--Master-->
@@ -63,13 +64,13 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Year" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MfP-Nr-IY2">
-                                        <rect key="frame" x="133" y="343" width="226" height="18"/>
+                                        <rect key="frame" x="133" y="343" width="129" height="18"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rating" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g4c-YO-vQG">
-                                        <rect key="frame" x="359" y="343" width="226" height="18"/>
+                                        <rect key="frame" x="262" y="343" width="323" height="18"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
@@ -88,7 +89,7 @@
                                     <constraint firstItem="brr-IP-HAq" firstAttribute="leading" secondItem="0mi-9Z-zzg" secondAttribute="leading" constant="15" id="FNo-dY-Jb2"/>
                                     <constraint firstItem="g4c-YO-vQG" firstAttribute="bottom" secondItem="pkN-Kh-SgW" secondAttribute="bottom" constant="-15" id="Fap-0b-W3w"/>
                                     <constraint firstItem="g4c-YO-vQG" firstAttribute="leading" secondItem="MfP-Nr-IY2" secondAttribute="trailing" id="MgT-dg-Q5V"/>
-                                    <constraint firstItem="g4c-YO-vQG" firstAttribute="width" secondItem="MfP-Nr-IY2" secondAttribute="width" id="OKV-wS-Ucs"/>
+                                    <constraint firstItem="g4c-YO-vQG" firstAttribute="width" secondItem="MfP-Nr-IY2" secondAttribute="width" multiplier="2.5" id="OKV-wS-Ucs"/>
                                     <constraint firstAttribute="trailing" secondItem="pkN-Kh-SgW" secondAttribute="trailing" id="PIF-Yz-Sve"/>
                                     <constraint firstItem="x5g-5r-XJL" firstAttribute="bottom" secondItem="pkN-Kh-SgW" secondAttribute="bottom" constant="-15" id="S3h-K3-y2n"/>
                                     <constraint firstItem="MfP-Nr-IY2" firstAttribute="top" secondItem="wAu-My-FWf" secondAttribute="bottom" id="SIS-Eb-LzD"/>
