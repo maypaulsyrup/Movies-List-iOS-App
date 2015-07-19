@@ -31,6 +31,7 @@
     
     AFHTTPRequestOperationManager *requestManager = [AFHTTPRequestOperationManager manager];
     requestManager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"text/plain"];
+    
     [requestManager GET:[NSString stringWithFormat:PCPMoviesListURL, self.pageNumber] parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
         if (self.pageNumber == 1) {
             [self.movies removeAllObjects];
@@ -52,15 +53,18 @@
         }
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         NSDictionary *errorInfo = error.userInfo;
-        NSLog(@"%@", errorInfo[@"NSLocalizedDescription"]);
-        NSLog(@"%d", error.code);
+        NSLog(@"Error -- %@", errorInfo[@"NSLocalizedDescription"]);
+        NSLog(@"Error Code: %d", [error code]);
         
         if (error.code == -1009) {
             [[[UIAlertView alloc] initWithTitle:@"Error" message:errorInfo[@"NSLocalizedDescription"] delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil] show];
         } else if (error.code == -1011) {
             self.hasReachedLastPage = YES;
-            [self.tableView reloadData];
         }
+        
+        [self.refreshControl endRefreshing];
+        self.loading = NO;
+        [self.tableView reloadData];
     }];
 }
 
@@ -118,7 +122,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     // Return the number of rows in the section.
-    if (self.isLoading || self.hasReachedLastPage) {
+    if ([self.movies count] == 0 || self.isLoading || self.hasReachedLastPage) {
         return [self.movies count];
     } else {
         return [self.movies count] + 1;
