@@ -86,6 +86,21 @@
     [self fetchMoviesFromServer];
 }
 
+#pragma mark - Appearance customization
+
+- (void)configureAppearance {
+    UILabel *loadingMessage = [[UILabel alloc] init];
+    loadingMessage.text = @"Loading movies... If this takes too long, pull down to refresh.";
+    loadingMessage.numberOfLines = 0;
+    loadingMessage.textAlignment = NSTextAlignmentCenter;
+    loadingMessage.font = [UIFont italicSystemFontOfSize:20.0f];
+    loadingMessage.center = self.view.center;
+    [loadingMessage sizeThatFits:CGSizeMake(CGRectGetWidth(self.view.frame) - 30, CGRectGetHeight(self.view.frame))];
+    
+    self.tableView.backgroundView = loadingMessage;
+    self.tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
+}
+
 #pragma mark - View
 
 - (void)viewDidLoad {
@@ -106,6 +121,8 @@
     
     self.refreshControl = [[UIRefreshControl alloc] init];
     [self.refreshControl addTarget:self action:@selector(reloadMovies) forControlEvents:UIControlEventValueChanged];
+    
+    [self configureAppearance];
 }
 
 - (void)didReceiveMemoryWarning {
