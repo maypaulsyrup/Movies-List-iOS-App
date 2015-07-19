@@ -10,4 +10,14 @@
 
 @implementation PCPMovieCell
 
+- (void)setSelected:(BOOL)selected animated:(BOOL)animated {
+    [super setSelected:selected animated:animated];
+    
+    if (selected) {
+        self.backdropView.layer.opacity = 0.4f;
+    } else {
+        self.backdropView.layer.opacity = 1.0f;
+    }
+}
+
 @end
