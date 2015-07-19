@@ -18,6 +18,7 @@
 		DA2F24401B5819EE00553EA4 /* Movies_ListTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DA2F243F1B5819EE00553EA4 /* Movies_ListTests.m */; };
 		DA46533A1B59747200031651 /* PCPConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = DA4653391B59747200031651 /* PCPConstants.m */; };
 		DA49BF621B59851A00EC7020 /* backdrop-placeholder.png in Resources */ = {isa = PBXBuildFile; fileRef = DA49BF611B59851A00EC7020 /* backdrop-placeholder.png */; };
+		DA70E99B1B5B669E004A075B /* master-title-overlay.png in Resources */ = {isa = PBXBuildFile; fileRef = DA70E99A1B5B669E004A075B /* master-title-overlay.png */; };
 		DA9A3FEC1B58B7D1006DF86C /* PCPMovieCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DA9A3FEB1B58B7D1006DF86C /* PCPMovieCell.m */; };
 		DA9A3FF21B5920A8006DF86C /* PCPMovieDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DA9A3FF11B5920A8006DF86C /* PCPMovieDetailViewController.m */; };
 		DA9A3FF81B592CA8006DF86C /* fight-club-1999-cover.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DA9A3FF31B592CA8006DF86C /* fight-club-1999-cover.jpg */; };
@@ -66,6 +67,7 @@
 		DA4653391B59747200031651 /* PCPConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PCPConstants.m; sourceTree = "<group>"; };
 		DA46533B1B59749100031651 /* PCPConstants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PCPConstants.h; sourceTree = "<group>"; };
 		DA49BF611B59851A00EC7020 /* backdrop-placeholder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "backdrop-placeholder.png"; sourceTree = "<group>"; };
+		DA70E99A1B5B669E004A075B /* master-title-overlay.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "master-title-overlay.png"; sourceTree = "<group>"; };
 		DA9A3FEA1B58B7D1006DF86C /* PCPMovieCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PCPMovieCell.h; sourceTree = "<group>"; };
 		DA9A3FEB1B58B7D1006DF86C /* PCPMovieCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PCPMovieCell.m; sourceTree = "<group>"; };
 		DA9A3FF01B5920A8006DF86C /* PCPMovieDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PCPMovieDetailViewController.h; sourceTree = "<group>"; };
@@ -193,6 +195,7 @@
 			isa = PBXGroup;
 			children = (
 				DA49BF611B59851A00EC7020 /* backdrop-placeholder.png */,
+				DA70E99A1B5B669E004A075B /* master-title-overlay.png */,
 			);
 			path = Images;
 			sourceTree = "<group>";
@@ -307,6 +310,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DAC1F8B41B5848420044D7E4 /* fight-club-1999-backdrop.jpg in Resources */,
+				DA70E99B1B5B669E004A075B /* master-title-overlay.png in Resources */,
 				DAC1F8B61B5848420044D7E4 /* the-godfather-1972-backdrop.jpg in Resources */,
 				DA9A3FFB1B592CA8006DF86C /* the-godfather-part-ii-1974-cover.jpg in Resources */,
 				DA9A3FF91B592CA8006DF86C /* the-dark-knight-2008-cover.jpg in Resources */,
