@@ -15,6 +15,8 @@
 @interface PCPMovieDetailViewController ()
 
 @property (strong, nonatomic) IBOutlet NSLayoutConstraint *coverViewWidthConstraint;
+@property (strong, nonatomic) IBOutlet UIImageView *overlayView;
+@property (strong, nonatomic) IBOutlet NSLayoutConstraint *overlayViewHeightConstraint;
 
 @end
 
@@ -32,6 +34,8 @@
         self.coverView.layer.borderColor = [UIColor whiteColor].CGColor;
         self.coverView.layer.borderWidth = 2.0f;
         
+        self.overlayView.hidden = NO;
+        
         self.titleLabel.hidden = NO;
         self.titleLabel.text = self.movie.title;
         self.yearLabel.hidden = NO;
@@ -43,6 +47,7 @@
     } else {
         self.bacdropView.hidden = YES;
         self.coverView.hidden = YES;
+        self.overlayView.hidden = YES;
         self.titleLabel.hidden = YES;
         self.yearLabel.hidden = YES;
         self.ratingLabel.hidden = YES;
@@ -58,6 +63,7 @@
         self.yearLabel.font = [UIFont systemFontOfSize:20.0f];
         self.ratingLabel.font = [UIFont systemFontOfSize:20.0f];
         self.coverViewWidthConstraint.constant = 180.0f;
+        self.overlayViewHeightConstraint.constant = 150.0f;
     }
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(orientationChanged:) name:UIDeviceOrientationDidChangeNotification object:nil];
@@ -81,6 +87,7 @@
             self.yearLabel.font = [UIFont systemFontOfSize:15.0f];
             self.ratingLabel.font = [UIFont systemFontOfSize:15.0f];
             self.coverViewWidthConstraint.constant = 110.0f;
+            self.overlayViewHeightConstraint.constant = 80.0f;
             break;
         }
             
@@ -90,6 +97,7 @@
             self.yearLabel.font = [UIFont systemFontOfSize:20.0f];
             self.ratingLabel.font = [UIFont systemFontOfSize:20.0f];
             self.coverViewWidthConstraint.constant = 180.0f;
+            self.overlayViewHeightConstraint.constant = 150.0f;
             break;
         }
             

@@ -42,6 +42,12 @@
                                             <constraint firstAttribute="width" secondItem="pkN-Kh-SgW" secondAttribute="height" multiplier="75:47" id="lcy-uR-VAv"/>
                                         </constraints>
                                     </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="master-title-overlay.png" translatesAutoresizingMaskIntoConstraints="NO" id="cHs-7c-euV">
+                                        <rect key="frame" x="0.0" y="296" width="600" height="80"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="80" id="afY-vd-IoF"/>
+                                        </constraints>
+                                    </imageView>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="x5g-5r-XJL">
                                         <rect key="frame" x="15" y="209" width="110" height="152"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -86,6 +92,7 @@
                                     <constraint firstAttribute="trailing" secondItem="pkN-Kh-SgW" secondAttribute="trailing" id="PIF-Yz-Sve"/>
                                     <constraint firstItem="x5g-5r-XJL" firstAttribute="bottom" secondItem="pkN-Kh-SgW" secondAttribute="bottom" constant="-15" id="S3h-K3-y2n"/>
                                     <constraint firstItem="MfP-Nr-IY2" firstAttribute="top" secondItem="wAu-My-FWf" secondAttribute="bottom" id="SIS-Eb-LzD"/>
+                                    <constraint firstItem="cHs-7c-euV" firstAttribute="bottom" secondItem="pkN-Kh-SgW" secondAttribute="bottom" id="VOp-k7-eFn"/>
                                     <constraint firstAttribute="trailing" secondItem="wAu-My-FWf" secondAttribute="trailing" constant="15" id="WGL-WR-2f3"/>
                                     <constraint firstAttribute="bottom" secondItem="brr-IP-HAq" secondAttribute="bottom" constant="10" id="WiK-Wa-rAE"/>
                                     <constraint firstItem="MfP-Nr-IY2" firstAttribute="bottom" secondItem="pkN-Kh-SgW" secondAttribute="bottom" constant="-15" id="XKn-hX-ty1"/>
@@ -93,6 +100,8 @@
                                     <constraint firstAttribute="trailing" secondItem="g4c-YO-vQG" secondAttribute="trailing" constant="15" id="fgk-dJ-9mp"/>
                                     <constraint firstItem="pkN-Kh-SgW" firstAttribute="leading" secondItem="x5g-5r-XJL" secondAttribute="leading" constant="-15" id="h9G-fT-xQZ"/>
                                     <constraint firstItem="wAu-My-FWf" firstAttribute="leading" secondItem="x5g-5r-XJL" secondAttribute="trailing" constant="8" id="mzm-NT-RtJ"/>
+                                    <constraint firstItem="cHs-7c-euV" firstAttribute="leading" secondItem="0mi-9Z-zzg" secondAttribute="leading" id="ouF-f2-67l"/>
+                                    <constraint firstAttribute="trailing" secondItem="cHs-7c-euV" secondAttribute="trailing" id="ult-QF-mVn"/>
                                     <constraint firstItem="g4c-YO-vQG" firstAttribute="top" secondItem="wAu-My-FWf" secondAttribute="bottom" id="vZk-06-lTB"/>
                                     <constraint firstItem="pkN-Kh-SgW" firstAttribute="leading" secondItem="0mi-9Z-zzg" secondAttribute="leading" id="xFj-Op-w2n"/>
                                 </constraints>
@@ -113,6 +122,8 @@
                         <outlet property="bacdropView" destination="pkN-Kh-SgW" id="2Of-rU-krF"/>
                         <outlet property="coverView" destination="x5g-5r-XJL" id="tfl-2a-6eI"/>
                         <outlet property="coverViewWidthConstraint" destination="GGp-D3-M25" id="XBS-7H-g8A"/>
+                        <outlet property="overlayView" destination="cHs-7c-euV" id="Yjp-6N-fJa"/>
+                        <outlet property="overlayViewHeightConstraint" destination="afY-vd-IoF" id="BYQ-ij-DqT"/>
                         <outlet property="overviewLabel" destination="brr-IP-HAq" id="EHf-fd-lZo"/>
                         <outlet property="ratingLabel" destination="g4c-YO-vQG" id="SBc-Ym-0oZ"/>
                         <outlet property="scrollView" destination="0mi-9Z-zzg" id="r68-ET-c0B"/>
