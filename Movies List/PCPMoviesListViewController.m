@@ -55,7 +55,7 @@ static int const PCPMoviesListFirstPage = 1;
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         NSDictionary *errorInfo = [error userInfo];
         NSLog(@"Error -- %@", errorInfo[@"NSLocalizedDescription"]);
-        NSLog(@"Error Code: %d", [error code]);
+        NSLog(@"Error Code: %ld", (long)[error code]);
         
         if ([error code] == -1009 || [error code] == -1003) {
             [[[UIAlertView alloc] initWithTitle:@"Error" message:errorInfo[@"NSLocalizedDescription"] delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil] show];
