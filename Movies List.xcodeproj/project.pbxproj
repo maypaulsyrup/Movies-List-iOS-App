@@ -10,8 +10,6 @@
 		333D15F70AB778E1AF675C81 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 08A1F5A53DE08D0113770FED /* libPods.a */; };
 		DA2F24231B5819EE00553EA4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DA2F24221B5819EE00553EA4 /* main.m */; };
 		DA2F24261B5819EE00553EA4 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DA2F24251B5819EE00553EA4 /* AppDelegate.m */; };
-		DA2F24291B5819EE00553EA4 /* MasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DA2F24281B5819EE00553EA4 /* MasterViewController.m */; };
-		DA2F242C1B5819EE00553EA4 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DA2F242B1B5819EE00553EA4 /* DetailViewController.m */; };
 		DA2F242F1B5819EE00553EA4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA2F242D1B5819EE00553EA4 /* Main.storyboard */; };
 		DA2F24311B5819EE00553EA4 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DA2F24301B5819EE00553EA4 /* Images.xcassets */; };
 		DA2F24341B5819EE00553EA4 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = DA2F24321B5819EE00553EA4 /* LaunchScreen.xib */; };
@@ -21,18 +19,8 @@
 		DA70E99B1B5B669E004A075B /* master-title-overlay.png in Resources */ = {isa = PBXBuildFile; fileRef = DA70E99A1B5B669E004A075B /* master-title-overlay.png */; };
 		DA9A3FEC1B58B7D1006DF86C /* PCPMovieCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DA9A3FEB1B58B7D1006DF86C /* PCPMovieCell.m */; };
 		DA9A3FF21B5920A8006DF86C /* PCPMovieDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DA9A3FF11B5920A8006DF86C /* PCPMovieDetailViewController.m */; };
-		DA9A3FF81B592CA8006DF86C /* fight-club-1999-cover.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DA9A3FF31B592CA8006DF86C /* fight-club-1999-cover.jpg */; };
-		DA9A3FF91B592CA8006DF86C /* the-dark-knight-2008-cover.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DA9A3FF41B592CA8006DF86C /* the-dark-knight-2008-cover.jpg */; };
-		DA9A3FFA1B592CA8006DF86C /* the-godfather-1972-cover.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DA9A3FF51B592CA8006DF86C /* the-godfather-1972-cover.jpg */; };
-		DA9A3FFB1B592CA8006DF86C /* the-godfather-part-ii-1974-cover.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DA9A3FF61B592CA8006DF86C /* the-godfather-part-ii-1974-cover.jpg */; };
-		DA9A3FFC1B592CA8006DF86C /* the-shawshank-redemption-1994-cover.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DA9A3FF71B592CA8006DF86C /* the-shawshank-redemption-1994-cover.jpg */; };
 		DAB7A39D1B59500C0093C17F /* PCPMovie.m in Sources */ = {isa = PBXBuildFile; fileRef = DAB7A39C1B59500C0093C17F /* PCPMovie.m */; };
 		DAC1F8AD1B5847020044D7E4 /* PCPMoviesListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DAC1F8AC1B5847020044D7E4 /* PCPMoviesListViewController.m */; };
-		DAC1F8B41B5848420044D7E4 /* fight-club-1999-backdrop.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DAC1F8AF1B5848420044D7E4 /* fight-club-1999-backdrop.jpg */; };
-		DAC1F8B51B5848420044D7E4 /* the-dark-knight-2008-backdrop.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DAC1F8B01B5848420044D7E4 /* the-dark-knight-2008-backdrop.jpg */; };
-		DAC1F8B61B5848420044D7E4 /* the-godfather-1972-backdrop.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DAC1F8B11B5848420044D7E4 /* the-godfather-1972-backdrop.jpg */; };
-		DAC1F8B71B5848420044D7E4 /* the-godfather-part-ii-1974-backdrop.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DAC1F8B21B5848420044D7E4 /* the-godfather-part-ii-1974-backdrop.jpg */; };
-		DAC1F8B81B5848420044D7E4 /* the-shawshank-redemption-1994-backdrop.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DAC1F8B31B5848420044D7E4 /* the-shawshank-redemption-1994-backdrop.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,10 +42,6 @@
 		DA2F24221B5819EE00553EA4 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		DA2F24241B5819EE00553EA4 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		DA2F24251B5819EE00553EA4 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		DA2F24271B5819EE00553EA4 /* MasterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MasterViewController.h; sourceTree = "<group>"; };
-		DA2F24281B5819EE00553EA4 /* MasterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MasterViewController.m; sourceTree = "<group>"; };
-		DA2F242A1B5819EE00553EA4 /* DetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
-		DA2F242B1B5819EE00553EA4 /* DetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
 		DA2F242E1B5819EE00553EA4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		DA2F24301B5819EE00553EA4 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		DA2F24331B5819EE00553EA4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -72,20 +56,10 @@
 		DA9A3FEB1B58B7D1006DF86C /* PCPMovieCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PCPMovieCell.m; sourceTree = "<group>"; };
 		DA9A3FF01B5920A8006DF86C /* PCPMovieDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PCPMovieDetailViewController.h; sourceTree = "<group>"; };
 		DA9A3FF11B5920A8006DF86C /* PCPMovieDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PCPMovieDetailViewController.m; sourceTree = "<group>"; };
-		DA9A3FF31B592CA8006DF86C /* fight-club-1999-cover.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "fight-club-1999-cover.jpg"; sourceTree = "<group>"; };
-		DA9A3FF41B592CA8006DF86C /* the-dark-knight-2008-cover.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "the-dark-knight-2008-cover.jpg"; sourceTree = "<group>"; };
-		DA9A3FF51B592CA8006DF86C /* the-godfather-1972-cover.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "the-godfather-1972-cover.jpg"; sourceTree = "<group>"; };
-		DA9A3FF61B592CA8006DF86C /* the-godfather-part-ii-1974-cover.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "the-godfather-part-ii-1974-cover.jpg"; sourceTree = "<group>"; };
-		DA9A3FF71B592CA8006DF86C /* the-shawshank-redemption-1994-cover.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "the-shawshank-redemption-1994-cover.jpg"; sourceTree = "<group>"; };
 		DAB7A39B1B59500C0093C17F /* PCPMovie.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PCPMovie.h; sourceTree = "<group>"; };
 		DAB7A39C1B59500C0093C17F /* PCPMovie.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PCPMovie.m; sourceTree = "<group>"; };
 		DAC1F8AB1B5847020044D7E4 /* PCPMoviesListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PCPMoviesListViewController.h; sourceTree = "<group>"; };
 		DAC1F8AC1B5847020044D7E4 /* PCPMoviesListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PCPMoviesListViewController.m; sourceTree = "<group>"; };
-		DAC1F8AF1B5848420044D7E4 /* fight-club-1999-backdrop.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "fight-club-1999-backdrop.jpg"; sourceTree = "<group>"; };
-		DAC1F8B01B5848420044D7E4 /* the-dark-knight-2008-backdrop.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "the-dark-knight-2008-backdrop.jpg"; sourceTree = "<group>"; };
-		DAC1F8B11B5848420044D7E4 /* the-godfather-1972-backdrop.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "the-godfather-1972-backdrop.jpg"; sourceTree = "<group>"; };
-		DAC1F8B21B5848420044D7E4 /* the-godfather-part-ii-1974-backdrop.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "the-godfather-part-ii-1974-backdrop.jpg"; sourceTree = "<group>"; };
-		DAC1F8B31B5848420044D7E4 /* the-shawshank-redemption-1994-backdrop.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "the-shawshank-redemption-1994-backdrop.jpg"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -141,14 +115,10 @@
 			children = (
 				DA2F24241B5819EE00553EA4 /* AppDelegate.h */,
 				DA2F24251B5819EE00553EA4 /* AppDelegate.m */,
-				DA2F24271B5819EE00553EA4 /* MasterViewController.h */,
-				DA2F24281B5819EE00553EA4 /* MasterViewController.m */,
 				DAC1F8AB1B5847020044D7E4 /* PCPMoviesListViewController.h */,
 				DAC1F8AC1B5847020044D7E4 /* PCPMoviesListViewController.m */,
 				DA9A3FEA1B58B7D1006DF86C /* PCPMovieCell.h */,
 				DA9A3FEB1B58B7D1006DF86C /* PCPMovieCell.m */,
-				DA2F242A1B5819EE00553EA4 /* DetailViewController.h */,
-				DA2F242B1B5819EE00553EA4 /* DetailViewController.m */,
 				DA9A3FF01B5920A8006DF86C /* PCPMovieDetailViewController.h */,
 				DA9A3FF11B5920A8006DF86C /* PCPMovieDetailViewController.m */,
 				DAB7A39B1B59500C0093C17F /* PCPMovie.h */,
@@ -157,7 +127,6 @@
 				DA4653391B59747200031651 /* PCPConstants.m */,
 				DA2F242D1B5819EE00553EA4 /* Main.storyboard */,
 				DA49BF601B59851900EC7020 /* Images */,
-				DAC1F8AE1B5848420044D7E4 /* Dummy Images */,
 				DA2F24301B5819EE00553EA4 /* Images.xcassets */,
 				DA2F24321B5819EE00553EA4 /* LaunchScreen.xib */,
 				DA2F24201B5819EE00553EA4 /* Supporting Files */,
@@ -198,23 +167,6 @@
 				DA70E99A1B5B669E004A075B /* master-title-overlay.png */,
 			);
 			path = Images;
-			sourceTree = "<group>";
-		};
-		DAC1F8AE1B5848420044D7E4 /* Dummy Images */ = {
-			isa = PBXGroup;
-			children = (
-				DA9A3FF31B592CA8006DF86C /* fight-club-1999-cover.jpg */,
-				DA9A3FF41B592CA8006DF86C /* the-dark-knight-2008-cover.jpg */,
-				DA9A3FF51B592CA8006DF86C /* the-godfather-1972-cover.jpg */,
-				DA9A3FF61B592CA8006DF86C /* the-godfather-part-ii-1974-cover.jpg */,
-				DA9A3FF71B592CA8006DF86C /* the-shawshank-redemption-1994-cover.jpg */,
-				DAC1F8AF1B5848420044D7E4 /* fight-club-1999-backdrop.jpg */,
-				DAC1F8B01B5848420044D7E4 /* the-dark-knight-2008-backdrop.jpg */,
-				DAC1F8B11B5848420044D7E4 /* the-godfather-1972-backdrop.jpg */,
-				DAC1F8B21B5848420044D7E4 /* the-godfather-part-ii-1974-backdrop.jpg */,
-				DAC1F8B31B5848420044D7E4 /* the-shawshank-redemption-1994-backdrop.jpg */,
-			);
-			path = "Dummy Images";
 			sourceTree = "<group>";
 		};
 		FAEA7E597D81B0406E0AE27A /* Frameworks */ = {
@@ -309,20 +261,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DAC1F8B41B5848420044D7E4 /* fight-club-1999-backdrop.jpg in Resources */,
 				DA70E99B1B5B669E004A075B /* master-title-overlay.png in Resources */,
-				DAC1F8B61B5848420044D7E4 /* the-godfather-1972-backdrop.jpg in Resources */,
-				DA9A3FFB1B592CA8006DF86C /* the-godfather-part-ii-1974-cover.jpg in Resources */,
-				DA9A3FF91B592CA8006DF86C /* the-dark-knight-2008-cover.jpg in Resources */,
-				DAC1F8B81B5848420044D7E4 /* the-shawshank-redemption-1994-backdrop.jpg in Resources */,
-				DAC1F8B71B5848420044D7E4 /* the-godfather-part-ii-1974-backdrop.jpg in Resources */,
-				DA9A3FFA1B592CA8006DF86C /* the-godfather-1972-cover.jpg in Resources */,
-				DA9A3FFC1B592CA8006DF86C /* the-shawshank-redemption-1994-cover.jpg in Resources */,
 				DA2F242F1B5819EE00553EA4 /* Main.storyboard in Resources */,
 				DA49BF621B59851A00EC7020 /* backdrop-placeholder.png in Resources */,
 				DA2F24341B5819EE00553EA4 /* LaunchScreen.xib in Resources */,
-				DAC1F8B51B5848420044D7E4 /* the-dark-knight-2008-backdrop.jpg in Resources */,
-				DA9A3FF81B592CA8006DF86C /* fight-club-1999-cover.jpg in Resources */,
 				DA2F24311B5819EE00553EA4 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -389,12 +331,10 @@
 			files = (
 				DAB7A39D1B59500C0093C17F /* PCPMovie.m in Sources */,
 				DA2F24261B5819EE00553EA4 /* AppDelegate.m in Sources */,
-				DA2F24291B5819EE00553EA4 /* MasterViewController.m in Sources */,
 				DAC1F8AD1B5847020044D7E4 /* PCPMoviesListViewController.m in Sources */,
 				DA2F24231B5819EE00553EA4 /* main.m in Sources */,
 				DA9A3FEC1B58B7D1006DF86C /* PCPMovieCell.m in Sources */,
 				DA46533A1B59747200031651 /* PCPConstants.m in Sources */,
-				DA2F242C1B5819EE00553EA4 /* DetailViewController.m in Sources */,
 				DA9A3FF21B5920A8006DF86C /* PCPMovieDetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
