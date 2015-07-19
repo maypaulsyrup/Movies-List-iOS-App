@@ -12,6 +12,12 @@
 #import <SDWebImage/UIImageView+WebCache.h>
 #import <QuartzCore/QuartzCore.h>
 
+@interface PCPMovieDetailViewController ()
+
+@property (strong, nonatomic) IBOutlet NSLayoutConstraint *coverViewWidthConstraint;
+
+@end
+
 @implementation PCPMovieDetailViewController
 
 - (void)viewDidLoad {
@@ -41,6 +47,55 @@
         self.yearLabel.hidden = YES;
         self.ratingLabel.hidden = YES;
         self.overviewLabel.hidden = YES;
+    }
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    
+    if (UIDeviceOrientationIsLandscape([[UIDevice currentDevice] orientation])) {
+        self.titleLabel.font = [UIFont boldSystemFontOfSize:25.0f];
+        self.yearLabel.font = [UIFont systemFontOfSize:20.0f];
+        self.ratingLabel.font = [UIFont systemFontOfSize:20.0f];
+        self.coverViewWidthConstraint.constant = 180.0f;
+    }
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(orientationChanged:) name:UIDeviceOrientationDidChangeNotification object:nil];
+}
+
+- (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+    
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:UIDeviceBatteryLevelDidChangeNotification object:nil];
+}
+
+#pragma mark - Orientation change notification
+
+- (void)orientationChanged:(NSNotification *)notification {
+    UIDeviceOrientation orientation = [[UIDevice currentDevice] orientation];
+    
+    switch (orientation) {
+        case UIDeviceOrientationPortrait:
+        case UIDeviceOrientationPortraitUpsideDown: {
+            self.titleLabel.font = [UIFont boldSystemFontOfSize:17.0f];
+            self.yearLabel.font = [UIFont systemFontOfSize:15.0f];
+            self.ratingLabel.font = [UIFont systemFontOfSize:15.0f];
+            self.coverViewWidthConstraint.constant = 110.0f;
+            break;
+        }
+            
+        case UIDeviceOrientationLandscapeLeft:
+        case UIDeviceOrientationLandscapeRight: {
+            self.titleLabel.font = [UIFont boldSystemFontOfSize:25.0f];
+            self.yearLabel.font = [UIFont systemFontOfSize:20.0f];
+            self.ratingLabel.font = [UIFont systemFontOfSize:20.0f];
+            self.coverViewWidthConstraint.constant = 180.0f;
+            break;
+        }
+            
+        case UIInterfaceOrientationUnknown:
+        default:
+            break;
     }
 }
 

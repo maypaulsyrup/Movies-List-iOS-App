@@ -43,8 +43,8 @@
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Overview" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="0.0" translatesAutoresizingMaskIntoConstraints="NO" id="brr-IP-HAq">
-                                        <rect key="frame" x="15" y="386" width="570" height="15"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                        <rect key="frame" x="15" y="386" width="570" height="18"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -52,13 +52,13 @@
                                         <rect key="frame" x="15" y="209" width="110" height="152"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="152" id="fQY-Dz-hXF"/>
-                                            <constraint firstAttribute="width" constant="110" id="foH-6n-dUS"/>
+                                            <constraint firstAttribute="width" constant="110" id="GGp-D3-M25"/>
+                                            <constraint firstAttribute="width" secondItem="x5g-5r-XJL" secondAttribute="height" multiplier="55:76" id="V6d-uL-DNQ"/>
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="0.0" translatesAutoresizingMaskIntoConstraints="NO" id="wAu-My-FWf">
                                         <rect key="frame" x="133" y="322" width="452" height="21"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -111,6 +111,7 @@
                     <connections>
                         <outlet property="bacdropView" destination="pkN-Kh-SgW" id="2Of-rU-krF"/>
                         <outlet property="coverView" destination="x5g-5r-XJL" id="tfl-2a-6eI"/>
+                        <outlet property="coverViewWidthConstraint" destination="GGp-D3-M25" id="XBS-7H-g8A"/>
                         <outlet property="overviewLabel" destination="brr-IP-HAq" id="EHf-fd-lZo"/>
                         <outlet property="ratingLabel" destination="g4c-YO-vQG" id="SBc-Ym-0oZ"/>
                         <outlet property="scrollView" destination="0mi-9Z-zzg" id="r68-ET-c0B"/>
