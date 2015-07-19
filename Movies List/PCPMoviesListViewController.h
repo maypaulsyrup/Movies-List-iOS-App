@@ -10,4 +10,6 @@
 
 @interface PCPMoviesListViewController : UITableViewController
 
+@property (strong, nonatomic) NSMutableArray *movies;
+
 @end

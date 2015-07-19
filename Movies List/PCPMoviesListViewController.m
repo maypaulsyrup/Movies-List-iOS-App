@@ -17,7 +17,6 @@
 
 @interface PCPMoviesListViewController () <UISplitViewControllerDelegate>
 
-@property (strong, nonatomic) NSMutableArray *movies;
 @property (assign, getter=isLoading) BOOL loading;
 @property (assign, nonatomic) int pageNumber;
 @property (assign, nonatomic) BOOL hasReachedLastPage;
@@ -26,6 +25,8 @@
 
 @implementation PCPMoviesListViewController
 
+static int const PCPMoviesListFirstPage = 1;
+
 - (void)fetchMoviesFromServer {
     self.loading = YES;
     
@@ -33,13 +34,13 @@
     requestManager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"text/plain"];
     
     [requestManager GET:[NSString stringWithFormat:PCPMoviesListURL, self.pageNumber] parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        if (self.pageNumber == 1) {
+        if ([self pageNumber] == PCPMoviesListFirstPage) {
             [self.movies removeAllObjects];
         }
         
         if ([responseObject[@"status"] isEqualToString:@"ok"]) {
             for (NSDictionary *movieDictionary in responseObject[@"data"][@"movies"]) {
-                PCPMovie *movie = [[PCPMovie alloc] initWithTitle:movieDictionary[@"title"] yearReleased:[movieDictionary[@"year"] intValue] andSlug:movieDictionary[@"slug"]];
+                PCPMovie *movie = [[PCPMovie alloc] initWithTitle:movieDictionary[@"title"] yearReleased:[movieDictionary[@"year"] intValue] slug:movieDictionary[@"slug"]];
                 movie.rating = [movieDictionary[@"rating"] floatValue];
                 movie.overview = movieDictionary[@"overview"];
                 
@@ -52,7 +53,7 @@
             [self.tableView reloadData];
         }
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        NSDictionary *errorInfo = error.userInfo;
+        NSDictionary *errorInfo = [error userInfo];
         NSLog(@"Error -- %@", errorInfo[@"NSLocalizedDescription"]);
         NSLog(@"Error Code: %d", [error code]);
         
@@ -69,16 +70,16 @@
 }
 
 - (void)reloadMovies {
-    if (self.isLoading) {
+    if ([self isLoading]) {
         return;
     }
     
-    self.pageNumber = 1;
+    self.pageNumber = PCPMoviesListFirstPage;
     [self fetchMoviesFromServer];
 }
 
 - (void)loadMoreMovies {
-    if (self.isLoading) {
+    if ([self isLoading]) {
         return;
     }
     
@@ -110,7 +111,7 @@
     
     self.movies = [NSMutableArray array];
     
-    self.pageNumber = 1;
+    self.pageNumber = PCPMoviesListFirstPage;
     [self fetchMoviesFromServer];
     
     self.refreshControl = [[UIRefreshControl alloc] init];
@@ -126,7 +127,7 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    if ([self.movies count] == 0 || self.isLoading || self.hasReachedLastPage) {
+    if ([self.movies count] == 0 || [self isLoading] || [self hasReachedLastPage]) {
         return [self.movies count];
     } else {
         return [self.movies count] + 1;
@@ -147,10 +148,10 @@
         PCPMovieCell *movieCell = [tableView dequeueReusableCellWithIdentifier:@"MovieCell" forIndexPath:indexPath];
         
         // Configure the cell...
-        [movieCell.backdropView sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:PCPMovieBackdropURL, movie.slug]] placeholderImage:[UIImage imageNamed:@"backdrop-placeholder"]];
+        [movieCell.backdropView sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:PCPMovieBackdropURL, [movie slug]]] placeholderImage:[UIImage imageNamed:@"backdrop-placeholder"]];
         
-        movieCell.titleLabel.text = movie.title;
-        movieCell.yearLabel.text = [NSString stringWithFormat:@"%d", movie.yearReleased];
+        movieCell.titleLabel.text = [movie title];
+        movieCell.yearLabel.text = [NSString stringWithFormat:@"%d", [movie yearReleased]];
         
         return movieCell;
     }
@@ -175,7 +176,7 @@
         loadMoreCell.textLabel.hidden = YES;
         
         UIActivityIndicatorView *loadingView = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
-        loadingView.center = loadMoreCell.contentView.center;
+        loadingView.center = [loadMoreCell.contentView center];
         [loadMoreCell addSubview:loadingView];
         [loadingView startAnimating];
         
@@ -195,7 +196,7 @@
         if ([segue.destinationViewController isKindOfClass:[UINavigationController class]]) {
             movieDetailViewController = (PCPMovieDetailViewController *)[segue.destinationViewController topViewController];
         } else {
-            movieDetailViewController = segue.destinationViewController;
+            movieDetailViewController = [segue destinationViewController];
         }
         
         movieDetailViewController.movie = movie;

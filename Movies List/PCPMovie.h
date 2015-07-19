@@ -16,6 +16,6 @@
 @property (assign, nonatomic) float rating;
 @property (copy, nonatomic) NSString *overview;
 
-- (id)initWithTitle:(NSString *)title yearReleased:(int)yearReleased andSlug:(NSString *)slug;
+- (id)initWithTitle:(NSString *)title yearReleased:(int)yearReleased slug:(NSString *)slug;
 
 @end

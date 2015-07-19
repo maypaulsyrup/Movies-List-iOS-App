@@ -10,7 +10,7 @@
 
 @implementation PCPMovie
 
-- (id)initWithTitle:(NSString *)title yearReleased:(int)yearReleased andSlug:(NSString *)slug {
+- (id)initWithTitle:(NSString *)title yearReleased:(int)yearReleased slug:(NSString *)slug {
     self = [super init];
     
     if (self) {

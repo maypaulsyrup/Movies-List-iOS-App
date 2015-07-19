@@ -22,28 +22,28 @@
 
 @implementation PCPMovieDetailViewController
 
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    
+#pragma mark - Appearance customization
+
+- (void)configureAppearance {
     if (self.movie) {
         self.bacdropView.hidden = NO;
-        [self.bacdropView sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:PCPMovieBackdropURL, self.movie.slug]] placeholderImage:[UIImage imageNamed:@"backdrop-placeholder"]];
+        [self.bacdropView sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:PCPMovieBackdropURL, [self.movie slug]]] placeholderImage:[UIImage imageNamed:@"backdrop-placeholder"]];
         
         self.coverView.hidden = NO;
-        [self.coverView sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:PCPMovieCoverURL, self.movie.slug]]];
+        [self.coverView sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:PCPMovieCoverURL, [self.movie slug]]]];
         self.coverView.layer.borderColor = [UIColor whiteColor].CGColor;
         self.coverView.layer.borderWidth = 2.0f;
         
         self.overlayView.hidden = NO;
         
         self.titleLabel.hidden = NO;
-        self.titleLabel.text = self.movie.title;
+        self.titleLabel.text = [self.movie title];
         self.yearLabel.hidden = NO;
-        self.yearLabel.text = [NSString stringWithFormat:@"%d", self.movie.yearReleased];
+        self.yearLabel.text = [NSString stringWithFormat:@"%d", [self.movie yearReleased]];
         self.ratingLabel.hidden = NO;
-        self.ratingLabel.text = [NSString stringWithFormat:@"Rating: %1.1f", self.movie.rating];
+        self.ratingLabel.text = [NSString stringWithFormat:@"Rating: %1.1f", [self.movie rating]];
         
-        self.overviewLabel.text = self.movie.overview;
+        self.overviewLabel.text = [self.movie overview];
     } else {
         self.bacdropView.hidden = YES;
         self.coverView.hidden = YES;
@@ -55,10 +55,18 @@
     }
 }
 
+#pragma mark - View
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    
+    [self configureAppearance];
+}
+
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     
-    if ([[UIApplication sharedApplication] statusBarOrientation] == UIInterfaceOrientationLandscapeLeft || [[UIApplication sharedApplication] statusBarOrientation] == UIInterfaceOrientationLandscapeRight) {
+    if ([UIApplication sharedApplication].statusBarOrientation == UIInterfaceOrientationLandscapeLeft || [UIApplication sharedApplication].statusBarOrientation == UIInterfaceOrientationLandscapeRight) {
         self.titleLabel.font = [UIFont boldSystemFontOfSize:25.0f];
         self.yearLabel.font = [UIFont systemFontOfSize:20.0f];
         self.ratingLabel.font = [UIFont systemFontOfSize:20.0f];
@@ -78,7 +86,7 @@
 #pragma mark - Orientation change notification
 
 - (void)orientationChanged:(NSNotification *)notification {
-    UIInterfaceOrientation orientation = [[UIApplication sharedApplication] statusBarOrientation];
+    UIInterfaceOrientation orientation = [UIApplication sharedApplication].statusBarOrientation;
     
     switch (orientation) {
         case UIInterfaceOrientationPortrait:
