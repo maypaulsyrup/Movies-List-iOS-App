@@ -27,7 +27,7 @@
 - (void)configureAppearance {
     if (self.movie) {
         self.bacdropView.hidden = NO;
-        [self.bacdropView sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:PCPMovieBackdropURL, [self.movie slug]]] placeholderImage:[UIImage imageNamed:@"backdrop-placeholder"]];
+        [self.bacdropView sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:PCPMovieBackdropURL, [self.movie slug]]] placeholderImage:[UIImage imageNamed:@"BackdropPlaceholder"]];
         
         self.coverView.hidden = NO;
         [self.coverView sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:PCPMovieCoverURL, [self.movie slug]]]];

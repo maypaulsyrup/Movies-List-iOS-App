@@ -15,8 +15,8 @@
 		DA2F24341B5819EE00553EA4 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = DA2F24321B5819EE00553EA4 /* LaunchScreen.xib */; };
 		DA2F24401B5819EE00553EA4 /* Movies_ListTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DA2F243F1B5819EE00553EA4 /* Movies_ListTests.m */; };
 		DA46533A1B59747200031651 /* PCPConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = DA4653391B59747200031651 /* PCPConstants.m */; };
-		DA49BF621B59851A00EC7020 /* backdrop-placeholder.png in Resources */ = {isa = PBXBuildFile; fileRef = DA49BF611B59851A00EC7020 /* backdrop-placeholder.png */; };
-		DA70E99B1B5B669E004A075B /* master-title-overlay.png in Resources */ = {isa = PBXBuildFile; fileRef = DA70E99A1B5B669E004A075B /* master-title-overlay.png */; };
+		DA49BF621B59851A00EC7020 /* BackdropPlaceholder.png in Resources */ = {isa = PBXBuildFile; fileRef = DA49BF611B59851A00EC7020 /* BackdropPlaceholder.png */; };
+		DA70E99B1B5B669E004A075B /* TextOverlay.png in Resources */ = {isa = PBXBuildFile; fileRef = DA70E99A1B5B669E004A075B /* TextOverlay.png */; };
 		DA9A3FEC1B58B7D1006DF86C /* PCPMovieCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DA9A3FEB1B58B7D1006DF86C /* PCPMovieCell.m */; };
 		DA9A3FF21B5920A8006DF86C /* PCPMovieDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DA9A3FF11B5920A8006DF86C /* PCPMovieDetailViewController.m */; };
 		DAB7A39D1B59500C0093C17F /* PCPMovie.m in Sources */ = {isa = PBXBuildFile; fileRef = DAB7A39C1B59500C0093C17F /* PCPMovie.m */; };
@@ -50,8 +50,8 @@
 		DA2F243F1B5819EE00553EA4 /* Movies_ListTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Movies_ListTests.m; sourceTree = "<group>"; };
 		DA4653391B59747200031651 /* PCPConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PCPConstants.m; sourceTree = "<group>"; };
 		DA46533B1B59749100031651 /* PCPConstants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PCPConstants.h; sourceTree = "<group>"; };
-		DA49BF611B59851A00EC7020 /* backdrop-placeholder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "backdrop-placeholder.png"; sourceTree = "<group>"; };
-		DA70E99A1B5B669E004A075B /* master-title-overlay.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "master-title-overlay.png"; sourceTree = "<group>"; };
+		DA49BF611B59851A00EC7020 /* BackdropPlaceholder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BackdropPlaceholder.png; sourceTree = "<group>"; };
+		DA70E99A1B5B669E004A075B /* TextOverlay.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TextOverlay.png; sourceTree = "<group>"; };
 		DA9A3FEA1B58B7D1006DF86C /* PCPMovieCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PCPMovieCell.h; sourceTree = "<group>"; };
 		DA9A3FEB1B58B7D1006DF86C /* PCPMovieCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PCPMovieCell.m; sourceTree = "<group>"; };
 		DA9A3FF01B5920A8006DF86C /* PCPMovieDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PCPMovieDetailViewController.h; sourceTree = "<group>"; };
@@ -163,8 +163,8 @@
 		DA49BF601B59851900EC7020 /* Images */ = {
 			isa = PBXGroup;
 			children = (
-				DA49BF611B59851A00EC7020 /* backdrop-placeholder.png */,
-				DA70E99A1B5B669E004A075B /* master-title-overlay.png */,
+				DA49BF611B59851A00EC7020 /* BackdropPlaceholder.png */,
+				DA70E99A1B5B669E004A075B /* TextOverlay.png */,
 			);
 			path = Images;
 			sourceTree = "<group>";
@@ -261,9 +261,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DA70E99B1B5B669E004A075B /* master-title-overlay.png in Resources */,
+				DA70E99B1B5B669E004A075B /* TextOverlay.png in Resources */,
 				DA2F242F1B5819EE00553EA4 /* Main.storyboard in Resources */,
-				DA49BF621B59851A00EC7020 /* backdrop-placeholder.png in Resources */,
+				DA49BF621B59851A00EC7020 /* BackdropPlaceholder.png in Resources */,
 				DA2F24341B5819EE00553EA4 /* LaunchScreen.xib in Resources */,
 				DA2F24311B5819EE00553EA4 /* Images.xcassets in Resources */,
 			);

@@ -43,7 +43,7 @@
                                             <constraint firstAttribute="width" secondItem="pkN-Kh-SgW" secondAttribute="height" multiplier="75:47" id="lcy-uR-VAv"/>
                                         </constraints>
                                     </imageView>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="master-title-overlay.png" translatesAutoresizingMaskIntoConstraints="NO" id="cHs-7c-euV">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="TextOverlay.png" translatesAutoresizingMaskIntoConstraints="NO" id="cHs-7c-euV">
                                         <rect key="frame" x="0.0" y="296" width="600" height="80"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="80" id="afY-vd-IoF"/>
@@ -169,7 +169,7 @@
                                         <imageView userInteractionEnabled="NO" tag="100" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="yFa-xM-zjH">
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="195"/>
                                         </imageView>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="master-title-overlay.png" translatesAutoresizingMaskIntoConstraints="NO" id="9PT-sK-43m">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="TextOverlay.png" translatesAutoresizingMaskIntoConstraints="NO" id="9PT-sK-43m">
                                             <rect key="frame" x="0.0" y="67" width="600" height="128"/>
                                         </imageView>
                                         <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" tag="101" contentMode="left" text="Title" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="0.0" translatesAutoresizingMaskIntoConstraints="NO" id="Ngb-0g-T3k">
@@ -258,7 +258,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="master-title-overlay.png" width="1" height="357"/>
+        <image name="TextOverlay.png" width="1" height="357"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="6S0-TO-JiA"/>

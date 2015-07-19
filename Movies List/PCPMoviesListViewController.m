@@ -148,7 +148,7 @@ static int const PCPMoviesListFirstPage = 1;
         PCPMovieCell *movieCell = [tableView dequeueReusableCellWithIdentifier:@"MovieCell" forIndexPath:indexPath];
         
         // Configure the cell...
-        [movieCell.backdropView sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:PCPMovieBackdropURL, [movie slug]]] placeholderImage:[UIImage imageNamed:@"backdrop-placeholder"]];
+        [movieCell.backdropView sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:PCPMovieBackdropURL, [movie slug]]] placeholderImage:[UIImage imageNamed:@"BackdropPlaceholder"]];
         
         movieCell.titleLabel.text = [movie title];
         movieCell.yearLabel.text = [NSString stringWithFormat:@"%d", [movie yearReleased]];
