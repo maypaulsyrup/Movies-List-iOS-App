@@ -163,7 +163,9 @@ static int const PCPMoviesListFirstPage = 1;
     if (indexPath.row == [self.movies count]) {
         return 44.0f;
     } else {
-        return 196.0f;
+        CGFloat aspectRatio = 439.0f/720.0f;
+
+        return aspectRatio * CGRectGetWidth(self.view.frame);
     }
 }
 
